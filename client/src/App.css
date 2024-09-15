@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arima','Laila', Arial, sans-serif;
+}
+
+/**journey across india**/
+.journey-across-india {
+  margin-top: 5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.journey-heading h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+/* Select State Input Bar */
+.select-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem; /* Add some bottom margin */
+  margin-top: 2rem; /* Add top margin to give more space above */
+  max-width: 380px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#select-state {
+  border: none;
+  width: 300px; /* Adjust width if needed */
+  height: 45px;
+  padding: 0 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  outline: none;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+  background-color: #f4f4f4;
+}
+
+#select-state:focus {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.stateselection-icon {
+  margin-left: 10px;
+  background-color: black;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.stateselection-icon i {
+  color: white;
+  font-size: 1.3rem;
+}
+
+.stateselection-icon i:hover{
+  color: black;
+}
+
+.stateselection-icon:hover {
+  background-color: white;
+  border: 2px solid black;
+}
+
+/* Journey Section */
+.collection-of-journey {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: auto; /* Auto adjust rows based on content */
+  gap: 40px; /* Space between the grid items */
+  margin: 2rem auto; /* Center the section */
+  max-width: 1200px; /* Restrict to a max width for better layout on large screens */
+}
+
+
+/* Individual Box Backgrounds */
+.collection-of-journey :nth-child(1) .box-image {
+  background-image: url("images/taj_mahal_sq.jpg");
+}
+
+.collection-of-journey :nth-child(2) .box-image {
+  background-image: url("images/india_gate_sq.jpg");
+}
+
+.collection-of-journey :nth-child(3) .box-image {
+  background-image: url("images/india_muesum_sq.jpg");
+}
+
+.collection-of-journey :nth-child(4) .box-image {
+  background-image: url("images/Victoria_Memorial_sq.jpg");
+}
+
+.collection-of-journey :nth-child(5) .box-image {
+  background-image: url("images/pricep_ghat_sq.jpg");
+}
+
+.collection-of-journey :nth-child(6) .box-image {
+  background-image: url("images/dakshineswar_sq.jpg");
+}
+
+/** Cultures Section **/
+.The-essence-of-indian-culture {
+  margin-top: 5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.indian-culture-heading h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.collection-of-culture {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: auto; /* Auto adjust rows based on content */
+  gap: 40px; /* Space between the grid items */
+  margin: 2rem auto; /* Center the section */
+  max-width: 1200px; /* Restrict to a max width for better layout on large screens */
+  overflow: hidden; /* Ensures content is hidden when collapsed */
+  transition: height 0.5s ease-in-out;
+  height: auto; /* Default auto height */
+}
+
+.collection-of-culture.collapsed {
+  height: 95vh; /* Adjust this to match the height of 6 cards */
+}
+
+/* Set height for expanded state */
+.collection-of-culture.expanded {
+  height: 190vh; /* Let it expand to fit all the content */
+}
+
+/* Individual Box Backgrounds */
+.collection-of-culture :nth-child(1) .box-image {
+  background-image: url("images/durga-puja.jpg");
+}
+
+.collection-of-culture :nth-child(2) .box-image {
+  background-image: url("images/ganesh-chaturthi.jpg");
+}
+
+.collection-of-culture :nth-child(3) .box-image {
+  background-image: url("images/pongal.jpg");
+}
+
+.collection-of-culture :nth-child(4) .box-image {
+  background-image: url("images/eid-ul-fitr.jpg");
+}
+
+.collection-of-culture :nth-child(5) .box-image {
+  background-image: url("images/dussehra.jpg");
+}
+
+.collection-of-culture :nth-child(6) .box-image {
+  background-image: url("images/diwali.jpg");
+}
+
+/* More Button */
+.more-btn-container {
+  text-align: center;
+  margin-top: 20px; /* Adds spacing above the button */
+}
+
+.more-btn {
+  background-color: #333; /* Dark background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  padding: 12px 24px; /* Button padding */
+  border-radius: 50px; /* Rounded edges */
+  font-size: 1rem; /* Font size */
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover Effect */
+.more-btn:hover {
+  background-color: #555; /* Lighter background on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  transition: all 3s ease;
+}
+

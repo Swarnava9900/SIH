@@ -1,0 +1,70 @@
+.container{
+    padding-top: 22vh;
+    padding-left: 20vw;
+}
+
+.museum-info {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+}
+
+.museum-image{
+    margin: 10px;
+}
+
+.museum-image img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.museum-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.museum-details h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.museum-details p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.ticket-prices {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.ticket-prices button {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.prices:hover{
+    cursor: default;
+}
+
+.indians:hover{
+    background-color: #dcdcdc;
+}
+
+.foreigners:hover{
+    background-color: #dcdcdc;
+}
+
