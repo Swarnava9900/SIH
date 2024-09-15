@@ -10,12 +10,7 @@
 }
 
 #india{
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.7)
-    ),
-    url("../images/qutub-minar.jpg");
+  background-image: url("../images/hero/main3.jpg");
 }
 
 #delhi{
@@ -24,7 +19,7 @@
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.7)
     ),
-    url("../images/Delhimain.jpg");
+    url("../images/hero/Delhimain.jpg");
 }
 
 #kolkata{
@@ -33,7 +28,7 @@
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.7)
     ),
-    url("../images/Kolkatamain.jpg");
+    url("../images/hero/Kolkatamain.jpg");
 }
 
 #shimla{
@@ -42,7 +37,7 @@
       rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.7)
     ),
-    url("../images/Himachalmain.jpg");
+    url("../images/hero/Himachalmain.jpg");
 }
 
 .image-text {

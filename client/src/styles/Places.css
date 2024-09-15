@@ -1,6 +1,7 @@
 .container{
-    padding-top: 22vh;
+    padding-top: 20vh;
     padding-left: 20vw;
+    padding-bottom: 20vh;
 }
 
 .museum-info {
@@ -68,3 +69,8 @@
     background-color: #dcdcdc;
 }
 
+.go-back{
+    position: absolute;
+    margin: 20px;
+    left: 290px;
+}

@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 import "../styles/Places.css";
-import heritage from "../images/heritage.jpg";
-import culture from "../images/culture.jpg";
-import museum from "../images/museum.jpg";
-import architecture from "../images/architecture.jpg";
-import nature from "../images/nature.jpg";
-import spiritual from "../images/spiritual.jpg";
+import heritage from "../images/journey/heritage.jpg";
+import culture from "../images/journey/culture.jpg";
+import museum from "../images/journey/museum.jpg";
+import architecture from "../images/journey/architecture.jpg";
+import nature from "../images/journey/nature.jpg";
+import spiritual from "../images/journey/spiritual.jpg";
 
 export default function Places({ place, goBack }) {
   // Mapping place names to corresponding images
@@ -51,7 +51,7 @@ export default function Places({ place, goBack }) {
           </div>
         </div>
       </div>
-      <button className="more-btn" onClick={() => goBack(null)}>
+      <button className="go-back more-btn" onClick={() => goBack(null)}>
         Go Back
       </button>
     </div>
