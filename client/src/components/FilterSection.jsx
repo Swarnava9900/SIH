@@ -19,7 +19,7 @@ export default function FilterSection() {
              
               <div className="img-searchbar">
                 <div className="search-bar">
-                  <input type="text" placeholder="Explore Delhi" id="search" />
+                  <input type="text" placeholder="Explore" id="search" />
                 </div>
                 <div className="search-icon">
                   <i className="fa-solid fa-magnifying-glass"></i>
