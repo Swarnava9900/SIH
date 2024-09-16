@@ -1,11 +1,16 @@
 {
   "dependencies": {
-    "express": "^4.21.0"
+    "body-parser": "^1.20.3",
+    "dialogflow": "^4.0.3",
+    "dialogflow-fulfillment": "^0.5.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2",
+    "nodemon": "^3.1.4"
   },
   "name": "server",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",

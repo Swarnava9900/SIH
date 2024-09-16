@@ -14,12 +14,7 @@
 }
 
 #delhi{
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.7)
-    ),
-    url("../images/hero/Delhimain.jpg");
+  background-image: url("../images/hero/Delhimain.jpg");
 }
 
 #kolkata{
@@ -32,12 +27,7 @@
 }
 
 #shimla{
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.7)
-    ),
-    url("../images/hero/Himachalmain.jpg");
+  background-image: url("../images/hero/Shimlamain.jpg");
 }
 
 .image-text {

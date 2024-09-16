@@ -30,71 +30,40 @@ function App() {
 
   // Scroll to top when selectedJourney or selectedState changes with debouncing
   useEffect(() => {
-    const scrollToTop = debounce(() => {
-      window.scrollTo(0, 0);
-    }, 100); // 100ms debounce time
+    if (selectedJourney || selectedState) {
+      const scrollToTop = debounce(() => {
+        window.scrollTo(0, 0);
+      }, 100); // 100ms debounce time
 
-    scrollToTop();
+      scrollToTop();
+    }
   }, [selectedJourney, selectedState]);
 
   const delhi = [
-    "Red Fort",
-    "Qutub Minar",
-    "Humayun's Tomb",
-    "India Gate",
-    "Lotus Temple",
-    "Akshardham Temple",
-    "Jama Masjid",
-    "Rashtrapati Bhavan",
-    "National Museum",
-    "Jantar Mantar",
-    "Kingdom of Dreams",
-    "National Rail Museum",
-    "Purana Qila",
-    "National Zoological Park",
-    "Delhi War Cemetry",
+    "Red Fort", "Qutub Minar", "Humayun's Tomb", "India Gate", "Lotus Temple",
+    "Akshardham Temple", "Jama Masjid", "Rashtrapati Bhavan", "National Museum",
+    "Jantar Mantar", "Kingdom of Dreams", "National Rail Museum", "Purana Qila",
+    "National Zoological Park", "Delhi War Cemetery"
   ];
 
   const kolkata = [
-    "Victoria Memorial",
-    "Indian Museum",
-    "Birla Planetarium",
-    "Science City",
-    "Eco Park",
-    "Nicco Park",
-    "Alipore Zoo",
-    "Marble Palace",
-    "Mother's Wax Museum",
-    "Birla Industrial & Technological Museum",
-    "Prinsep Ghat",
-    "Belur Math",
-    "Botanical Gardens",
-    "Rabindra Sarobar",
-    "Fort William",
+    "Victoria Memorial", "Indian Museum", "Birla Planetarium", "Science City", "Eco Park",
+    "Nicco Park", "Alipore Zoo", "Marble Palace", "Mother's Wax Museum", 
+    "Birla Industrial & Technological Museum", "Prinsep Ghat", "Belur Math", 
+    "Botanical Gardens", "Rabindra Sarobar", "Fort William"
   ];
 
   const shimla = [
-    "Viceregal Lodge",
-    "Kufri Fun World",
-    "Chadwick Falls",
-    "Himalayan Bird Park",
-    "Jakhoo Temple",
-    "Himalayan Nature Park, Kufri",
-    "Tara Devi Temple",
-    "Annandale Army Heritage Museum",
-    "Shimla Heritage Museum",
-    "Green Valley",
-    "The Mall Road",
-    "Shimla State Museum",
-    "Mashobra Adventure Park",
-    "Ice Skating Rink",
-    "Naldehra Golf Course",
+    "Viceregal Lodge", "Kufri Fun World", "Chadwick Falls", "Himalayan Bird Park", 
+    "Jakhoo Temple", "Himalayan Nature Park, Kufri", "Tara Devi Temple", 
+    "Annandale Army Heritage Museum", "Shimla Heritage Museum", "Green Valley", 
+    "The Mall Road", "Shimla State Museum", "Mashobra Adventure Park", 
+    "Ice Skating Rink", "Naldehra Golf Course"
   ];
 
-  // Memoized render function for performance
   const renderPage = () => {
     let list;
-
+    
     if (selectedState === "delhi") {
       list = delhi;
     } else if (selectedState === "kolkata") {
@@ -106,10 +75,16 @@ function App() {
     if (selectedState) {
       return (
         <>
-          <Hero preview="Welcome to" main={selectedState} page={selectedState} />
-          <FilterSection />
+          <Suspense fallback={<div>Loading Hero...</div>}>
+            <Hero preview="Welcome to" main={selectedState} page={selectedState} />
+          </Suspense>
+          <Suspense fallback={<div>Loading Filter...</div>}>
+            <FilterSection />
+          </Suspense>
           <div className={selectedState}>
-            <CardContainer list={list} />
+            <Suspense fallback={<div>Loading Cards...</div>}>
+              <CardContainer list={list} />
+            </Suspense>
           </div>
         </>
       );
@@ -117,22 +92,34 @@ function App() {
 
     return (
       <>
-        <Hero preview="Experience the" main="Magic of India" page="india" />
-        <Journey setJourney={setSelectedJourney} />
-        <Culture />
+        <Suspense fallback={<div>Loading Hero...</div>}>
+          <Hero preview="Experience the" main="Magic of India" page="india" />
+        </Suspense>
+        <Suspense fallback={<div>Loading Journey...</div>}>
+          <Journey setJourney={setSelectedJourney} />
+        </Suspense>
+        <Suspense fallback={<div>Loading Culture...</div>}>
+          <Culture />
+        </Suspense>
       </>
     );
   };
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div>Loading Navbar...</div>}>
         <Navbar setSelectedState={setSelectedState} selectedState={selectedState} />
-        {selectedJourney ? (
+      </Suspense>
+
+      {selectedJourney ? (
+        <Suspense fallback={<div>Loading Places...</div>}>
           <Places place={selectedJourney} goBack={setSelectedJourney} />
-        ) : (
-          renderPage()
-        )}
+        </Suspense>
+      ) : (
+        renderPage()
+      )}
+
+      <Suspense fallback={<div>Loading Footer...</div>}>
         <Footer />
       </Suspense>
     </>
