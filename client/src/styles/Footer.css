@@ -38,13 +38,15 @@ footer {
   margin-bottom: 10px;
 }
 
-.footer-links ul li a {
-  color: #cccccc;
+.footer-links ul li a,
+.footer-contact ul li a {
+  color: #cccccc; /* Ensure the color is not blue */
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.footer-links ul li a:hover {
+.footer-links ul li a:hover,
+.footer-contact ul li a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
@@ -79,4 +81,13 @@ footer {
 .footer-bottom p {
   font-size: 0.9rem;
   color: #cccccc;
+}
+
+/* Fix for the email link color */
+.footer-contact ul li a {
+  color: #cccccc; /* Match the color of the surrounding text */
+}
+
+.footer-contact ul li a:hover {
+  color: #ffffff; /* Change color on hover for consistency */
 }

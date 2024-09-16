@@ -1,22 +1,47 @@
 /* eslint-disable react/prop-types */
+import React, { useState, useCallback } from "react";
 import "../styles/Navbar.css";
-import { useState } from "react";
 
-export default function Navbar({ setSelectedState, selectedState }) {
-  // useState hook to manage the dropdown state
+// Memoized Navbar component
+const Navbar = React.memo(({ setSelectedState, selectedState }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleScroll = (id) => {
+  // Debounced scroll handler to minimize frequent re-renders
+  const handleScroll = useCallback((id) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, []);
 
-  const handleMouseEnter = () => setIsOpen(true);
-  const handleMouseLeave = () => setIsOpen(false);
+  // Toggle dropdown open/close
+  const handleClick = useCallback(() => {
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  }, []);
 
-  const handleSelection = (state) => () => setSelectedState(state);
+  // Handle dropdown item selection
+  const handleSelection = useCallback(
+    (state) => () => {
+      setSelectedState(state);
+      setIsOpen(false); // Close dropdown when an item is selected
+    },
+    [setSelectedState]
+  );
+
+  // Close the dropdown when clicking outside
+  const handleClickOutside = useCallback((event) => {
+    if (!event.target.closest(".navbar")) {
+      setIsOpen(false);
+    }
+  }, []);
+
+  // Add event listener for clicks outside of the navbar
+  React.useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [handleClickOutside]);
 
   return (
     <nav>
@@ -32,11 +57,8 @@ export default function Navbar({ setSelectedState, selectedState }) {
                 <a onClick={() => setSelectedState(null)}>Home</a>
               </li>
             )}
-            <li
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <a>Explore</a>
+            <li>
+              <a onClick={handleClick}>Explore</a>
               {/* Show dropdown menu when isOpen is true */}
               {isOpen && (
                 <ul className="dropdown-menu">
@@ -60,4 +82,9 @@ export default function Navbar({ setSelectedState, selectedState }) {
       </div>
     </nav>
   );
-}
+});
+
+// Set displayName for better debugging
+Navbar.displayName = "Navbar";
+
+export default Navbar;

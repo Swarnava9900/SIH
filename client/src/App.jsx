@@ -1,30 +1,41 @@
-import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Journey from "./components/Journey";
-import Culture from "./components/Culture";
-import Footer from "./components/Footer";
-import Places from "./components/Places";
-import FilterSection from "./components/FilterSection";
-import CardContainer from "./components/CardContainer";
+import { useState, useEffect, lazy, Suspense } from "react";
 import "./App.css";
+
+// Custom debounce function
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+// Lazy load components
+const Navbar = lazy(() => import("./components/Navbar"));
+const Hero = lazy(() => import("./components/Hero"));
+const Journey = lazy(() => import("./components/Journey"));
+const Culture = lazy(() => import("./components/Culture"));
+const Footer = lazy(() => import("./components/Footer"));
+const Places = lazy(() => import("./components/Places"));
+const FilterSection = lazy(() => import("./components/FilterSection"));
+const CardContainer = lazy(() => import("./components/CardContainer"));
 
 function App() {
   const [selectedJourney, setSelectedJourney] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
 
-  // Scroll to top whenever `selectedJourney` changes
+  // Scroll to top when selectedJourney or selectedState changes with debouncing
   useEffect(() => {
-    if (selectedJourney) {
+    const scrollToTop = debounce(() => {
       window.scrollTo(0, 0);
-    }
-  }, [selectedJourney]);
+    }, 100); // 100ms debounce time
 
-  useEffect(() => {
-    if (selectedState || !selectedState) {
-      window.scrollTo(0, 0);
-    }
-  }, [selectedState]);
+    scrollToTop();
+  }, [selectedJourney, selectedState]);
 
   const delhi = [
     "Red Fort",
@@ -40,7 +51,7 @@ function App() {
     "Kingdom of Dreams",
     "National Rail Museum",
     "Purana Qila",
-    "National ZoologicalPark",
+    "National Zoological Park",
     "Delhi War Cemetry",
   ];
 
@@ -50,7 +61,7 @@ function App() {
     "Birla Planetarium",
     "Science City",
     "Eco Park",
-    "Nicco Par",
+    "Nicco Park",
     "Alipore Zoo",
     "Marble Palace",
     "Mother's Wax Museum",
@@ -80,28 +91,22 @@ function App() {
     "Naldehra Golf Course",
   ];
 
-  // Helper function to handle Hero rendering
+  // Memoized render function for performance
   const renderPage = () => {
-    var list;
+    let list;
 
-    if (selectedState == "delhi") {
+    if (selectedState === "delhi") {
       list = delhi;
-    }
-    if (selectedState == "kolkata") {
+    } else if (selectedState === "kolkata") {
       list = kolkata;
-    }
-    if (selectedState == "shimla") {
+    } else if (selectedState === "shimla") {
       list = shimla;
     }
 
     if (selectedState) {
       return (
         <>
-          <Hero
-            preview="Welcome to"
-            main={selectedState}
-            page={selectedState}
-          />
+          <Hero preview="Welcome to" main={selectedState} page={selectedState} />
           <FilterSection />
           <div className={selectedState}>
             <CardContainer list={list} />
@@ -109,6 +114,7 @@ function App() {
         </>
       );
     }
+
     return (
       <>
         <Hero preview="Experience the" main="Magic of India" page="india" />
@@ -120,16 +126,15 @@ function App() {
 
   return (
     <>
-      <Navbar
-        setSelectedState={setSelectedState}
-        selectedState={selectedState}
-      />
-      {selectedJourney ? (
-        <Places place={selectedJourney} goBack={setSelectedJourney} />
-      ) : (
-        <>{renderPage()}</>
-      )}
-      <Footer />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Navbar setSelectedState={setSelectedState} selectedState={selectedState} />
+        {selectedJourney ? (
+          <Places place={selectedJourney} goBack={setSelectedJourney} />
+        ) : (
+          renderPage()
+        )}
+        <Footer />
+      </Suspense>
     </>
   );
 }
