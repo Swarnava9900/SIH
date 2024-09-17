@@ -10,13 +10,13 @@
 }
 
 /*journey across india*/
-.journey-across-india {
+.journey-across-india, .The-essence-of-indian-culture {
   margin-top: 5rem;
   padding: 2rem;
   text-align: center;
 }
 
-.journey-heading h2 {
+.journey-heading h2, .indian-culture-heading h2 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 3rem;
@@ -32,24 +32,20 @@
   border-radius: 50px;
   padding: 10px 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 3rem; /* Add some bottom margin */
-  margin-top: 2rem; /* Add top margin to give more space above */
+  margin: 2rem auto 3rem;
   max-width: 380px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #select-state {
   border: none;
-  width: 300px; /* Adjust width if needed */
+  width: 300px;
   height: 45px;
   padding: 0 20px;
   border-radius: 50px;
   font-size: 1rem;
   outline: none;
-  box-shadow: none;
-  transition: all 0.3s ease-in-out;
   background-color: #f4f4f4;
+  transition: all 0.3s ease-in-out;
 }
 
 #select-state:focus {
@@ -75,23 +71,63 @@
   font-size: 1.3rem;
 }
 
-.stateselection-icon i:hover {
-  color: black;
-}
-
 .stateselection-icon:hover {
   background-color: white;
   border: 2px solid black;
 }
 
-/* Journey Section */
-.collection-of-journey {
+.stateselection-icon i:hover {
+  color: black;
+}
+
+/* Grid Layout for Collections */
+.collection-of-journey, .collection-of-culture, .delhi, .kolkata, .shimla {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-template-rows: auto; /* Auto adjust rows based on content */
-  gap: 40px; /* Space between the grid items */
-  margin: 2rem auto; /* Center the section */
-  max-width: 1200px; /* Restrict to a max width for better layout on large screens */
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 40px;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+/* Culture Section Collapse/Expand */
+.collection-of-culture {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  height: auto;
+}
+
+.collection-of-culture.collapsed {
+  height: 95vh;
+}
+
+.collection-of-culture.expanded {
+  height: 195vh;
+}
+
+/* More Button */
+.more-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.more-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.more-btn:hover {
+  background-color: #555;
+  transform: scale(1.05);
+  transition: all 3s ease;
 }
 
 /* Individual Box Backgrounds */
@@ -119,42 +155,6 @@
   background-image: url("../images/journey/spiritual.jpg");
 }
 
-/** Cultures Section **/
-.The-essence-of-indian-culture {
-  margin-top: 5rem;
-  padding: 2rem;
-  text-align: center;
-}
-
-.indian-culture-heading h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 3rem;
-  color: #333;
-}
-
-.collection-of-culture {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-template-rows: auto; /* Auto adjust rows based on content */
-  gap: 40px; /* Space between the grid items */
-  margin: 2rem auto; /* Center the section */
-  max-width: 1200px; /* Restrict to a max width for better layout on large screens */
-  overflow: hidden; /* Ensures content is hidden when collapsed */
-  transition: height 0.5s ease-in-out;
-  height: auto; /* Default auto height */
-}
-
-.collection-of-culture.collapsed {
-  height: 95vh; /* Adjust this to match the height of 6 cards */
-}
-
-/* Set height for expanded state */
-.collection-of-culture.expanded {
-  height: 195vh; /* Let it expand to fit all the content */
-}
-
-/* Individual Box Backgrounds */
 .collection-of-culture :nth-child(1) .box-image {
   background-image: url("../images/culture/durga-puja.jpg");
 }
@@ -203,122 +203,84 @@
   background-image: url("../images/culture/Lohri.jpeg");
 }
 
-/* More Button */
-.more-btn-container {
-  text-align: center;
-  margin-top: 20px; /* Adds spacing above the button */
-}
-
-.more-btn {
-  background-color: #333; /* Dark background */
-  color: white; /* White text */
-  border: none; /* Remove default border */
-  padding: 12px 24px; /* Button padding */
-  border-radius: 50px; /* Rounded edges */
-  font-size: 1rem; /* Font size */
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Button Hover Effect */
-.more-btn:hover {
-  background-color: #555; /* Lighter background on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  transition: all 3s ease;
-}
-
-/* delhi */
-.delhi,
-.kolkata,
-.shimla{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  grid-template-rows: auto; /* Auto adjust rows based on content */
-  gap: 40px; /* Space between the grid items */
-  margin: 2rem auto; /* Center the section */
-  max-width: 1200px; /* Restrict to a max width for better layout on large screens */
-}
-
-.delhi :nth-child(1) .box-image{
+.delhi :nth-child(1) .box-image {
   background-image: url("../images/delhi/Red_Fort.jpg");
 }
 
-.delhi :nth-child(2) .box-image{
+.delhi :nth-child(2) .box-image {
   background-image: url("../images/delhi/Qutub_minar.jpg");
 }
 
-.delhi :nth-child(3) .box-image{
+.delhi :nth-child(3) .box-image {
   background-image: url("../images/delhi/Humayuns_tomb.jpg");
 }
 
-.delhi :nth-child(4) .box-image{
+.delhi :nth-child(4) .box-image {
   background-image: url("../images/delhi/India_Gate.jpg");
 }
 
-.delhi :nth-child(5) .box-image{
+.delhi :nth-child(5) .box-image {
   background-image: url("../images/delhi/Lotus_temple.jpg");
 }
 
-.delhi :nth-child(6) .box-image{
+.delhi :nth-child(6) .box-image {
   background-image: url("../images/delhi/Akshardham_Temple.png");
 }
 
-.delhi :nth-child(7) .box-image{
+.delhi :nth-child(7) .box-image {
   background-image: url("../images/delhi/Jama_Masjid.jpg");
 }
 
-.delhi :nth-child(8) .box-image{
+.delhi :nth-child(8) .box-image {
   background-image: url("../images/delhi/Rashtrapati_Bhawan.jpg");
 }
 
-.delhi :nth-child(9) .box-image{
+.delhi :nth-child(9) .box-image {
   background-image: url("../images/delhi/National_museum.jpg");
 }
 
-.delhi :nth-child(10) .box-image{
+.delhi :nth-child(10) .box-image {
   background-image: url("../images/delhi/Jantar_mantar.jpg");
 }
 
-.delhi :nth-child(11) .box-image{
+.delhi :nth-child(11) .box-image {
   background-image: url("../images/delhi/Kingdom_of_dreams.jpg");
 }
 
-.delhi :nth-child(12) .box-image{
+.delhi :nth-child(12) .box-image {
   background-image: url("../images/delhi/Rail_museum.jpg");
 }
 
-.delhi :nth-child(13) .box-image{
+.delhi :nth-child(13) .box-image {
   background-image: url("../images/delhi/Purana_Qila.jpg");
 }
 
-.delhi :nth-child(14) .box-image{
+.delhi :nth-child(14) .box-image {
   background-image: url("../images/delhi/Zoological_park.jpg");
 }
 
-.delhi :nth-child(15) .box-image{
+.delhi :nth-child(15) .box-image {
   background-image: url("../images/delhi/Delhi_War_Cemetery.jpg");
 }
 
-.kolkata :nth-child(1) .box-image{
+.kolkata :nth-child(1) .box-image {
   background-image: url("../images/kolkata/Victoria_Memorial.jpg");
 }
 
-.kolkata :nth-child(2) .box-image{
+.kolkata :nth-child(2) .box-image {
   background-image: url("../images/kolkata/Indian_Museum1.jpg");
 }
 
-.kolkata :nth-child(3) .box-image{
+.kolkata :nth-child(3) .box-image {
   background-image: url("../images/kolkata/birla-planetarium.jpg");
 }
 
-.kolkata :nth-child(4) .box-image{
+.kolkata :nth-child(4) .box-image {
   background-image: url("../images/kolkata/Science_City.jpg");
 }
 
-.kolkata :nth-child(5) .box-image{
-  background-image: url("../images/kolkata/Eco_Park1.jpg");
+.kolkata :nth-child(5) .box-image {
+  background-image: url("../images/kolkata/Eco_Park.jpg");
 }
 
 .kolkata :nth-child(6) .box-image{

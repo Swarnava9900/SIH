@@ -27,6 +27,7 @@ const CardContainer = lazy(() => import("./components/CardContainer"));
 function App() {
   const [selectedJourney, setSelectedJourney] = useState(null);
   const [selectedState, setSelectedState] = useState(null);
+  const [showChatbot, setShowChatbot] = useState(false); // State to control chatbot visibility
 
   // Scroll to top when selectedJourney or selectedState changes with debouncing
   useEffect(() => {
@@ -38,6 +39,35 @@ function App() {
       scrollToTop();
     }
   }, [selectedJourney, selectedState]);
+
+  // Function to toggle chatbot visibility
+  const toggleChatbot = () => {
+    setShowChatbot((prev) => !prev); // Toggle chatbot state
+  };
+
+  // Chatbot script loading and showing chatbot conditionally
+  useEffect(() => {
+    if (showChatbot) {
+      // Add Dialogflow script dynamically only when chatbot is toggled on
+      const script = document.createElement("script");
+      script.src = "https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1";
+      script.async = true;
+      document.body.appendChild(script);
+
+      // Append df-messenger element only when chatbot is toggled on
+      const dfMessenger = document.createElement("df-messenger");
+      dfMessenger.setAttribute("chat-title", "spotwander");
+      dfMessenger.setAttribute("agent-id", "518be47c-1836-47e9-836a-b47140ac93a0");
+      dfMessenger.setAttribute("language-code", "en");
+      document.body.appendChild(dfMessenger);
+
+      return () => {
+        // Cleanup script and df-messenger when chatbot is toggled off
+        document.body.removeChild(script);
+        document.body.removeChild(dfMessenger);
+      };
+    }
+  }, [showChatbot]);
 
   const delhi = [
     "Red Fort", "Qutub Minar", "Humayun's Tomb", "India Gate", "Lotus Temple",
@@ -63,7 +93,7 @@ function App() {
 
   const renderPage = () => {
     let list;
-    
+
     if (selectedState === "delhi") {
       list = delhi;
     } else if (selectedState === "kolkata") {
@@ -112,7 +142,8 @@ function App() {
           setSelectedState={setSelectedState} 
           selectedState={selectedState} 
           setJourney={setSelectedJourney} 
-          selectedJourney={selectedJourney} // Pass selectedJourney as well
+          selectedJourney={selectedJourney} 
+          toggleChatbot={toggleChatbot} // Pass toggleChatbot to Navbar
         />
       </Suspense>
 
@@ -130,6 +161,13 @@ function App() {
       <Suspense fallback={<div>Loading Footer...</div>}>
         <Footer />
       </Suspense>
+
+      {/* Render the chatbot when toggled on */}
+      {showChatbot && (
+        <div id="chatbot-container">
+          {/* Dialogflow chatbot will be appended to this container */}
+        </div>
+      )}
     </>
   );
 }

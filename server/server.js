@@ -30,6 +30,11 @@ mongoose
 app.post("/api/dialogflow", (req, res) => {
   const agent = new WebhookClient({ request: req, response: res });
 
+  // Test intent to check the connection
+  function testConnection(agent) {
+    agent.add("The server is connected to Dialogflow successfully!");
+  }
+
   // Intent for finding available attractions
   async function findAttractions(agent) {
     const attractions = await Attraction.find(); // Get all attractions from DB
@@ -81,6 +86,7 @@ app.post("/api/dialogflow", (req, res) => {
 
   // Map intents to functions
   let intentMap = new Map();
+  intentMap.set("TestConnection", testConnection); // New intent for connection test
   intentMap.set("Find Attractions", findAttractions); // Dialogflow intent name
   intentMap.set("Book Tickets", bookTickets); // Dialogflow intent name
   intentMap.set("Booking - no", cancelBooking); // Dialogflow intent name for cancelling booking
