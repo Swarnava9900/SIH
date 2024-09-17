@@ -1,6 +1,5 @@
 /* Hero Image Section */
 .nav-image {
-  
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -9,15 +8,15 @@
   padding: 40px 5%;
 }
 
-#india{
+#india {
   background-image: url("../images/hero/main3.jpg");
 }
 
-#delhi{
+#delhi {
   background-image: url("../images/hero/Delhimain.jpg");
 }
 
-#kolkata{
+#kolkata {
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.3),
@@ -26,8 +25,62 @@
     url("../images/hero/Kolkatamain.jpg");
 }
 
-#shimla{
+#shimla {
   background-image: url("../images/hero/Shimlamain.jpg");
+}
+
+#heritage {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/journey/heritage.jpg");
+}
+
+#culture {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/journey/culture.jpg");
+}
+
+#museum {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/journey/museum.jpg");
+}
+
+#architecture {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/journey/architecture.jpg");
+}
+
+#nature {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/journey/nature.jpg");
+}
+
+#spiritual {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("../images/journey/spiritual.jpg");
 }
 
 .image-text {
@@ -36,6 +89,15 @@
   z-index: 2;
   padding-bottom: 20px;
   margin-top: 15rem;
+}
+
+#heritage .image-text,
+#culture .image-text,
+#museum .image-text,
+#architecture .image-text,
+#nature .image-text,
+#spiritual .image-text{
+  margin-top: 14rem;
 }
 
 .text1 {
@@ -52,45 +114,14 @@
   animation: slideIn 2.5s;
 }
 
-/* Search Bar */
-.img-searchbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  z-index: 2;
-  margin-top: 20px;
-}
-
-/* Website Agenda */
-.website-agenda {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  margin-top: 10rem; /* Adds space below the search bar */
-  padding-right: 0.05%; /* Keeps the agenda aligned to the right */
-}
-
-.website-agenda-texts {
-  display: flex;
-  gap: 30px; /* Adds space between agenda items */
-  color: white;
-}
-
-.agenda-item {
-  display: flex;
-  align-items: center;
-}
-
-.agenda-icon {
-  color: #ffffff;
-  font-size: 1.3rem;
-  margin-right: 10px; /* Creates space between icon and text */
-}
-
-.agenda-text p {
-  font-size: 1rem;
-  opacity: 0.9;
-  max-width: 20rem;
+#heritage .text2,
+#culture .text2,
+#museum .text2,
+#architecture .text2,
+#nature .text2,
+#spiritual .text2{
+  text-align: center;
+  font-size: 7.5rem;
 }
 
 /* Animations */

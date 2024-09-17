@@ -96,27 +96,27 @@
 
 /* Individual Box Backgrounds */
 .collection-of-journey :nth-child(1) .box-image {
-  background-image: url("images/journey/heritage.jpg");
+  background-image: url("../images/journey/heritage.jpg");
 }
 
 .collection-of-journey :nth-child(2) .box-image {
-  background-image: url("images/journey/culture.jpg");
+  background-image: url("../images/journey/culture.jpg");
 }
 
 .collection-of-journey :nth-child(3) .box-image {
-  background-image: url("images/journey/museum.jpg");
+  background-image: url("../images/journey/museum.jpg");
 }
 
 .collection-of-journey :nth-child(4) .box-image {
-  background-image: url("images/journey/architecture.jpg");
+  background-image: url("../images/journey/architecture.jpg");
 }
 
 .collection-of-journey :nth-child(5) .box-image {
-  background-image: url("images/journey/nature.jpg");
+  background-image: url("../images/journey/nature.jpg");
 }
 
 .collection-of-journey :nth-child(6) .box-image {
-  background-image: url("images/journey/spiritual.jpg");
+  background-image: url("../images/journey/spiritual.jpg");
 }
 
 /** Cultures Section **/
@@ -156,51 +156,51 @@
 
 /* Individual Box Backgrounds */
 .collection-of-culture :nth-child(1) .box-image {
-  background-image: url("images/culture/durga-puja.jpg");
+  background-image: url("../images/culture/durga-puja.jpg");
 }
 
 .collection-of-culture :nth-child(2) .box-image {
-  background-image: url("images/culture/ganesh-chaturthi.jpg");
+  background-image: url("../images/culture/ganesh-chaturthi.jpg");
 }
 
 .collection-of-culture :nth-child(3) .box-image {
-  background-image: url("images/culture/pongal.jpg");
+  background-image: url("../images/culture/pongal.jpg");
 }
 
 .collection-of-culture :nth-child(4) .box-image {
-  background-image: url("images/culture/eid-ul-fitr.jpg");
+  background-image: url("../images/culture/eid-ul-fitr.jpg");
 }
 
 .collection-of-culture :nth-child(5) .box-image {
-  background-image: url("images/culture/dussehra.jpg");
+  background-image: url("../images/culture/dussehra.jpg");
 }
 
 .collection-of-culture :nth-child(6) .box-image {
-  background-image: url("images/culture/diwali.jpg");
+  background-image: url("../images/culture/diwali.jpg");
 }
 
 .collection-of-culture :nth-child(7) .box-image {
-  background-image: url("images/culture/Holi.jpg");
+  background-image: url("../images/culture/Holi.jpg");
 }
 
 .collection-of-culture :nth-child(8) .box-image {
-  background-image: url("images/culture/Navratri.jpg");
+  background-image: url("../images/culture/Navratri.jpg");
 }
 
 .collection-of-culture :nth-child(9) .box-image {
-  background-image: url("images/culture/Onam.jpg");
+  background-image: url("../images/culture/Onam.jpg");
 }
 
 .collection-of-culture :nth-child(10) .box-image {
-  background-image: url("images/culture/Raksha_Bandhan.jpg");
+  background-image: url("../images/culture/Raksha_Bandhan.jpg");
 }
 
 .collection-of-culture :nth-child(11) .box-image {
-  background-image: url("images/culture/Makar_Sankranti.jpg");
+  background-image: url("../images/culture/Makar_Sankranti.jpg");
 }
 
 .collection-of-culture :nth-child(12) .box-image {
-  background-image: url("images/culture/Lohri.jpeg");
+  background-image: url("../images/culture/Lohri.jpeg");
 }
 
 /* More Button */
@@ -242,182 +242,182 @@
 }
 
 .delhi :nth-child(1) .box-image{
-  background-image: url("./images/delhi/Red_Fort.jpg");
+  background-image: url("../images/delhi/Red_Fort.jpg");
 }
 
 .delhi :nth-child(2) .box-image{
-  background-image: url("./images/delhi/Qutub_minar.jpg");
+  background-image: url("../images/delhi/Qutub_minar.jpg");
 }
 
 .delhi :nth-child(3) .box-image{
-  background-image: url("./images/delhi/Humayuns_tomb.jpg");
+  background-image: url("../images/delhi/Humayuns_tomb.jpg");
 }
 
 .delhi :nth-child(4) .box-image{
-  background-image: url("./images/delhi/India_Gate.jpg");
+  background-image: url("../images/delhi/India_Gate.jpg");
 }
 
 .delhi :nth-child(5) .box-image{
-  background-image: url("./images/delhi/Lotus_temple.jpg");
+  background-image: url("../images/delhi/Lotus_temple.jpg");
 }
 
 .delhi :nth-child(6) .box-image{
-  background-image: url("./images/delhi/Akshardham_Temple.png");
+  background-image: url("../images/delhi/Akshardham_Temple.png");
 }
 
 .delhi :nth-child(7) .box-image{
-  background-image: url("./images/delhi/Jama_Masjid.jpg");
+  background-image: url("../images/delhi/Jama_Masjid.jpg");
 }
 
 .delhi :nth-child(8) .box-image{
-  background-image: url("./images/delhi/Rashtrapati_Bhawan.jpg");
+  background-image: url("../images/delhi/Rashtrapati_Bhawan.jpg");
 }
 
 .delhi :nth-child(9) .box-image{
-  background-image: url("./images/delhi/National_museum.jpg");
+  background-image: url("../images/delhi/National_museum.jpg");
 }
 
 .delhi :nth-child(10) .box-image{
-  background-image: url("./images/delhi/Jantar_mantar.jpg");
+  background-image: url("../images/delhi/Jantar_mantar.jpg");
 }
 
 .delhi :nth-child(11) .box-image{
-  background-image: url("./images/delhi/Kingdom_of_dreams.jpg");
+  background-image: url("../images/delhi/Kingdom_of_dreams.jpg");
 }
 
 .delhi :nth-child(12) .box-image{
-  background-image: url("./images/delhi/Rail_museum.jpg");
+  background-image: url("../images/delhi/Rail_museum.jpg");
 }
 
 .delhi :nth-child(13) .box-image{
-  background-image: url("./images/delhi/Purana_Qila.jpg");
+  background-image: url("../images/delhi/Purana_Qila.jpg");
 }
 
 .delhi :nth-child(14) .box-image{
-  background-image: url("./images/delhi/Zoological_park.jpg");
+  background-image: url("../images/delhi/Zoological_park.jpg");
 }
 
 .delhi :nth-child(15) .box-image{
-  background-image: url("./images/delhi/Delhi_War_Cemetery.jpg");
+  background-image: url("../images/delhi/Delhi_War_Cemetery.jpg");
 }
 
 .kolkata :nth-child(1) .box-image{
-  background-image: url("./images/kolkata/Victoria_Memorial.jpg");
+  background-image: url("../images/kolkata/Victoria_Memorial.jpg");
 }
 
 .kolkata :nth-child(2) .box-image{
-  background-image: url("./images/kolkata/Indian_Museum1.jpg");
+  background-image: url("../images/kolkata/Indian_Museum1.jpg");
 }
 
 .kolkata :nth-child(3) .box-image{
-  background-image: url("./images/kolkata/birla-planetarium.jpg");
+  background-image: url("../images/kolkata/birla-planetarium.jpg");
 }
 
 .kolkata :nth-child(4) .box-image{
-  background-image: url("./images/kolkata/Science_City.jpg");
+  background-image: url("../images/kolkata/Science_City.jpg");
 }
 
 .kolkata :nth-child(5) .box-image{
-  background-image: url("./images/kolkata/Eco_Park1.jpg");
+  background-image: url("../images/kolkata/Eco_Park1.jpg");
 }
 
 .kolkata :nth-child(6) .box-image{
-  background-image: url("./images/kolkata/Nicco_Park.jpg");
+  background-image: url("../images/kolkata/Nicco_Park.jpg");
 }
 
 .kolkata :nth-child(7) .box-image{
-  background-image: url("./images/kolkata/Alipore_Zoological.JPG");
+  background-image: url("../images/kolkata/Alipore_Zoological.JPG");
 }
 
 .kolkata :nth-child(8) .box-image{
-  background-image: url("./images/kolkata/marble-palace-kolkata-1716380352.jpg");
+  background-image: url("../images/kolkata/marble-palace-kolkata-1716380352.jpg");
 }
 
 .kolkata :nth-child(9) .box-image{
-  background-image: url("./images/kolkata/mother_wax.jpg");
+  background-image: url("../images/kolkata/mother_wax.jpg");
 }
 
 .kolkata :nth-child(10) .box-image{
-  background-image: url("./images/kolkata/birla-planetarium.jpg");
+  background-image: url("../images/kolkata/birla-planetarium.jpg");
 }
 
 .kolkata :nth-child(11) .box-image{
-  background-image: url("./images/kolkata/pricep_ghat_rect.jpg");
+  background-image: url("../images/kolkata/pricep_ghat_rect.jpg");
 }
 
 .kolkata :nth-child(12) .box-image{
-  background-image: url("./images/kolkata/belur.jpg");
+  background-image: url("../images/kolkata/belur.jpg");
 }
 
 .kolkata :nth-child(13) .box-image{
-  background-image: url("./images/kolkata/botanical1.webp");
+  background-image: url("../images/kolkata/botanical1.webp");
 }
 
 .kolkata :nth-child(14) .box-image{
-  background-image: url("./images/kolkata/Rabindra_Sarovar_Kolkata.jpg");
+  background-image: url("../images/kolkata/Rabindra_Sarovar_Kolkata.jpg");
 }
 
 .kolkata :nth-child(15) .box-image{
-  background-image: url("./images/kolkata/Fort_William_Church.jpg");
+  background-image: url("../images/kolkata/Fort_William_Church.jpg");
 }
 
 .shimla :nth-child(1) .box-image{
-  background-image: url("./images/shimla/viceregal_lodge.jpg");
+  background-image: url("../images/shimla/viceregal_lodge.jpg");
 }
 
 .shimla :nth-child(2) .box-image{
-  background-image: url("./images/shimla/KuFri_Fun_World.jpg");
+  background-image: url("../images/shimla/KuFri_Fun_World.jpg");
 }
 
 .shimla :nth-child(3) .box-image{
-  background-image: url("./images/shimla/Chadwick_Falls.jpg");
+  background-image: url("../images/shimla/Chadwick_Falls.jpg");
 }
 
 .shimla :nth-child(4) .box-image{
-  background-image: url("./images/shimla/Himalayan_Bird_Park.jpg");
+  background-image: url("../images/shimla/Himalayan_Bird_Park.jpg");
 }
 
 .shimla :nth-child(5) .box-image{
-  background-image: url("./images/shimla/Jakhu_Temple.jpg");
+  background-image: url("../images/shimla/Jakhu_Temple.jpg");
 }
 
 .shimla :nth-child(6) .box-image{
-  background-image: url("./images/shimla/Himayalan_Nature_Park.jpg");
+  background-image: url("../images/shimla/Himayalan_Nature_Park.jpg");
 }
 
 .shimla :nth-child(7) .box-image{
-  background-image: url("./images/shimla/Tara_Devi_temple.jpg");
+  background-image: url("../images/shimla/Tara_Devi_temple.jpg");
 }
 
 .shimla :nth-child(8) .box-image{
-  background-image: url("./images/shimla/Annandale_Army_Museum.jpg");
+  background-image: url("../images/shimla/Annandale_Army_Museum.jpg");
 }
 
 .shimla :nth-child(9) .box-image{
-  background-image: url("./images/shimla/Shimla_Heritage_Museum.jpg");
+  background-image: url("../images/shimla/Shimla_Heritage_Museum.jpg");
 }
 
 .shimla :nth-child(10) .box-image{
-  background-image: url("./images/shimla/Green_valley.jpg");
+  background-image: url("../images/shimla/Green_valley.jpg");
 }
 
 .shimla :nth-child(11) .box-image{
-  background-image: url("./images/shimla/Mall_Road.jpg");
+  background-image: url("../images/shimla/Mall_Road.jpg");
 }
 
 .shimla :nth-child(12) .box-image{
-  background-image: url("./images/shimla/Shimla_State_Museum.jpg");
+  background-image: url("../images/shimla/Shimla_State_Museum.jpg");
 }
 
 .shimla :nth-child(13) .box-image{
-  background-image: url("./images/shimla/Mashobra_Adventure_Park.jpeg");
+  background-image: url("../images/shimla/Mashobra_Adventure_Park.jpeg");
 }
 
 .shimla :nth-child(14) .box-image{
-  background-image: url("./images/shimla/Ice_Skating_Ring.jpg");
+  background-image: url("../images/shimla/Ice_Skating_Ring.jpg");
 }
 
 .shimla :nth-child(15) .box-image{
-  background-image: url("./images/shimla/Naldehra_Golf_Course.jpeg");
+  background-image: url("../images/shimla/Naldehra_Golf_Course.jpeg");
 }
 

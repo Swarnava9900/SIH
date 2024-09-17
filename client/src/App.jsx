@@ -1,5 +1,5 @@
 import { useState, useEffect, lazy, Suspense } from "react";
-import "./App.css";
+import "./styles/App.css";
 
 // Custom debounce function
 function debounce(func, wait) {
@@ -17,10 +17,10 @@ function debounce(func, wait) {
 // Lazy load components
 const Navbar = lazy(() => import("./components/Navbar"));
 const Hero = lazy(() => import("./components/Hero"));
+const Hero1 = lazy(() => import("./components/Hero1"));
 const Journey = lazy(() => import("./components/Journey"));
 const Culture = lazy(() => import("./components/Culture"));
 const Footer = lazy(() => import("./components/Footer"));
-const Places = lazy(() => import("./components/Places"));
 const FilterSection = lazy(() => import("./components/FilterSection"));
 const CardContainer = lazy(() => import("./components/CardContainer"));
 
@@ -108,12 +108,20 @@ function App() {
   return (
     <>
       <Suspense fallback={<div>Loading Navbar...</div>}>
-        <Navbar setSelectedState={setSelectedState} selectedState={selectedState} />
+        <Navbar 
+          setSelectedState={setSelectedState} 
+          selectedState={selectedState} 
+          setJourney={setSelectedJourney} 
+          selectedJourney={selectedJourney} // Pass selectedJourney as well
+        />
       </Suspense>
 
       {selectedJourney ? (
-        <Suspense fallback={<div>Loading Places...</div>}>
-          <Places place={selectedJourney} goBack={setSelectedJourney} />
+        <Suspense fallback={<div>Loading Journeys...</div>}>
+          <Hero1 
+            main={selectedJourney} 
+            page={selectedJourney.toLowerCase()} 
+          />
         </Suspense>
       ) : (
         renderPage()

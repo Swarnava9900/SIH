@@ -3,7 +3,7 @@ import React, { useState, useCallback } from "react";
 import "../styles/Navbar.css";
 
 // Memoized Navbar component
-const Navbar = React.memo(({ setSelectedState, selectedState }) => {
+const Navbar = React.memo(({ setSelectedState, selectedState, setJourney, selectedJourney }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Debounced scroll handler to minimize frequent re-renders
@@ -23,9 +23,10 @@ const Navbar = React.memo(({ setSelectedState, selectedState }) => {
   const handleSelection = useCallback(
     (state) => () => {
       setSelectedState(state);
+      setJourney(null); // Clear journey when a state is selected
       setIsOpen(false); // Close dropdown when an item is selected
     },
-    [setSelectedState]
+    [setSelectedState, setJourney]
   );
 
   // Close the dropdown when clicking outside
@@ -43,6 +44,12 @@ const Navbar = React.memo(({ setSelectedState, selectedState }) => {
     };
   }, [handleClickOutside]);
 
+  // Handle Home button click to reset both journey and state
+  const handleHomeClick = useCallback(() => {
+    setSelectedState(null); // Reset selectedState
+    setJourney(null); // Reset selectedJourney
+  }, [setSelectedState, setJourney]);
+
   return (
     <nav>
       <div className="navbar">
@@ -51,10 +58,10 @@ const Navbar = React.memo(({ setSelectedState, selectedState }) => {
         </a>
         <div className="navlist">
           <ul>
-            {/* Conditionally render Home item if selectedState is not null */}
-            {selectedState && (
+            {/* Conditionally render Home item if selectedState or selectedJourney is not null */}
+            {(selectedState || selectedJourney) && (
               <li>
-                <a onClick={() => setSelectedState(null)}>Home</a>
+                <a onClick={handleHomeClick}>Home</a>
               </li>
             )}
             <li>
